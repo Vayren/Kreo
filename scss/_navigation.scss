@@ -1,0 +1,84 @@
+.navigation {
+    width:100%;
+    position: fixed;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    line-height: 1;
+    z-index: 1000;
+    
+    display: grid;
+    grid-template-columns: minmax(4rem, 1fr) [center-start] repeat(13, [col-start] minmax(min-content, 8.4rem) [col-end] ) [center-end] minmax(4rem, 1fr);
+
+    &__list {
+        grid-column: center-start / center-end;
+        list-style: none;
+
+        display:grid;
+        grid-auto-flow: column;
+        grid-auto-columns: min-content;
+        column-gap: 3rem;
+        align-items: center;
+    }
+
+    &__item--border {
+        align-self: stretch;
+        width:1px;
+        height: 100%;
+        background-color: $color-grey-light-2;
+    }
+
+    &__link:link,
+    &__link:visited {
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color:$color-white;
+        font-family: 'raleway-heavy';
+        font-size: 1.3rem;
+        letter-spacing: .2rem;
+        text-align: center;
+        transition: all .2s;
+    }
+
+    &__link:hover,
+    &__link:active {
+        color:$color-primary-light;
+    }
+
+    &__link--logo {
+            background-color: $color-primary-light;
+            padding:2.4rem 2.7rem;
+    }
+
+    &__img {
+        height:1.5rem;
+        width:auto;
+    }
+}
+
+.shares-list {
+    list-style: none;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    column-gap: 2rem;
+
+    margin-right: 3rem;
+
+    &__link:hover,
+    &__link:active{
+        svg {
+            fill:$color-primary-light;
+        }
+    }
+
+    &__icon {
+        width:2.4rem;
+        height:2.4rem;
+        fill:$color-white;
+        transition: all .2s;
+    }
+
+}

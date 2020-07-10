@@ -1,0 +1,81 @@
+.header {
+    height:70rem;
+    background-image: url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: grid;
+    grid-template-columns: minmax(3rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 10.4rem) [col-end]) [center-end] minmax(3rem, 1fr);
+    grid-template-rows: 1fr min-content 1fr min-content;
+    //grid-template-rows: 1fr min-content minmax(min-content, 15rem) min-content;
+
+    &__btn {
+        grid-row: 4 / 5;
+        grid-column: col-start 8 / col-end 9;
+
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+        color:$color-white;
+        background-color: $color-secondary;
+        padding:2rem 3rem;
+        border-radius: 5px;
+        text-align: center;
+        font-family: 'raleway-heavy', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: .2rem;
+        transform: translate(4rem, 50%);
+    }
+
+}
+
+.slider {
+    grid-column: center-start / center-end;
+    grid-row: 2 / 3;
+    
+    &__item {
+        display: grid;
+        grid-template-columns: minmax(min-content, 70%);
+        row-gap: 3rem;
+    }
+
+    &__text {
+        color:$color-grey-light-2;
+        font-family: 'merriweather-light', sans-serif;
+        font-size: 1.8rem;
+        line-height: 1.8;
+        margin-right: 10rem;
+    }
+
+}
+
+.dots {
+    grid-column: center-start / center-end;
+    grid-row: 3 / 4;
+
+    display:grid;
+    grid-template-columns: repeat(3, min-content);
+    column-gap: 1.4rem;
+    align-items: center;
+
+
+    &__dot {
+        display: inline-block;
+        width:1.3rem;
+        height:1.3rem;
+        border-radius: 50%;
+        background-color: $color-white;
+        cursor: pointer;
+        transition: all .2s;
+
+        &--active {
+            background-color: $color-primary-light;
+        }
+
+        &:hover {
+            background-color: $color-grey-light-2;
+        }
+
+    }
+}
+

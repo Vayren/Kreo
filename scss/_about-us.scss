@@ -1,0 +1,26 @@
+.about-us {
+    padding-top:14rem;
+    background-color: $color-grey-dark-1;
+
+    &__items {
+        grid-column: center-start / center-end;
+        margin-top: 3rem;
+    
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    }
+
+    &__item {
+        padding:1.8rem;
+        border-radius: 10px;
+        transition: all .3s;
+
+        &:hover {
+            background-color: $color-grey-dark-2;
+        }
+    }
+
+    &__text {
+        margin-top: 3rem;
+    }
+}

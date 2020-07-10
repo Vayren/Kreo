@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing:inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'merriweather-light', serif;
+    color:$color-grey-light-1;
+    line-height: 1.5;
+    position: relative;
+}
+
+.grid-medium {
+    display: grid;
+    grid-template-columns: minmax(4rem, 1fr) [center-start] repeat(13, [col-start] minmax(min-content, 8.4rem) [col-end] ) [center-end] minmax(4rem, 1fr);
+}
+
+.grid-big {
+    display: grid;
+    grid-template-columns: minmax(4rem, 1fr) [center-start] repeat(15, [col-start] minmax(min-content, 8.4rem) [col-end] ) [center-end] minmax(4rem, 1fr);
+}
+
+.title-block-medium {
+    padding-left:2rem;
+    padding-right:4rem;
+    grid-column: center-start / center-end;
+}
+
+.title-block-big {
+    grid-column: col-start 2/ col-end 13;
+}
+
+.underline {
+    border-bottom: 1px solid $color-grey-light-1;
+}
